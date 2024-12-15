@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Whiteboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="toolbar">
+        <button id="clearBtn">Clear</button>
+        <button id="saveBtn">Save</button>
+        <button id="highlightBtn">Highlight</button>
+        <button id="undoBtn">Undo</button>
+        <span id="userCount">Users: 0</span>
+    </div>
+    
+    <div id="whiteboard">
+        <!-- Text boxes will be dynamically added here -->
+    </div>
+
+    <div id="joinModal" class="modal">
+        <div class="modal-content">
+            <h2>Join Whiteboard</h2>
+            <p id="roomInfo"></p>
+            <div class="input-group">
+                <label for="passcodeInput">Passcode:</label>
+                <input type="text" id="passcodeInput" placeholder="Enter passcode">
+                <small id="passcodeHint"></small>
+            </div>
+            <p id="errorMessage" class="error"></p>
+            <button id="joinBtn">Join</button>
+            <div class="modal-footer">
+                <small>This whiteboard will expire after 24 hours of inactivity</small>
+                <small id="storageInfo"></small>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
